@@ -96,11 +96,64 @@ def openClock():
         bot.hotkey('winleft', 'shift', 'up')
 
 
+def openHtop():
+
+    bot.hotkey('winleft', 'enter')
+    rest(1)
+    bot.hotkey('winleft', 'shift', 'space')
+
+    bot.write('htop')
+    bot.press('enter')
+
+    # resize
+    bot.hotkey('winleft', 'r')
+
+    for x in range(22):
+        bot.press('left')
+
+    bot.press('esc')
+
+    # reposition
+
+    for x in range(22):
+        bot.hotkey('winleft', 'shift', 'left')
+
+    for x in range(11):
+        bot.hotkey('winleft', 'shift', 'down')
+
+
+def openNeoFetch():
+
+    bot.hotkey('winleft', 'enter')
+    rest(1)
+    bot.hotkey('winleft', 'shift', 'space')
+
+    bot.write('neofetch')
+    bot.press('enter')
+
+    # resize
+    bot.hotkey('winleft', 'r')
+
+    for x in range(6):
+        bot.press('left')
+
+    for x in range(5):
+        bot.press('up')
+
+    bot.press('esc')
+
+    # reposition
+
+    for x in range(33):
+        bot.hotkey('winleft', 'shift', 'right')
+
+    for x in range(11):
+        bot.hotkey('winleft', 'shift', 'up')
+
+
 # work flow
 
 activeWallpaperScript()
-
-bot.hotkey('winleft', 'shift', 'r')
 
 rest(1)
 
@@ -111,3 +164,13 @@ rest(1)
 bot.hotkey('winleft', '9')
 
 openClock()
+
+rest(1)
+
+openHtop()
+
+rest(1)
+
+openNeoFetch()
+
+bot.hotkey('winleft', 'shift', 'r')
