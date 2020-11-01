@@ -52,8 +52,62 @@ def activeWallpaperScript():
     rest(1)
 
 
+def activateTransparency():
+
+    bot.hotkey('winleft', 'enter')
+    rest(1)
+
+    bot.write('compton')
+    bot.press('enter')
+
+    bot.hotkey('winleft', 'shift', '1')
+
+
+def openClock():
+
+    bot.hotkey('winleft', 'enter')
+    rest(1)
+
+    bot.write('tty-clock')
+    bot.press('enter')
+
+    # place the clock
+    rest(1)
+    bot.hotkey('winleft', 'shift', 'space')
+    rest(1)
+
+    # resize
+    bot.hotkey('winleft', 'r')
+
+    for x in range(31):
+        bot.press('left')
+
+    for x in range(19):
+        bot.press('up')
+
+    bot.press('esc')
+
+    # reposition
+
+    for x in range(22):
+        bot.hotkey('winleft', 'shift', 'left')
+
+    for x in range(11):
+        bot.hotkey('winleft', 'shift', 'up')
+
+
 # work flow
 
 activeWallpaperScript()
 
 bot.hotkey('winleft', 'shift', 'r')
+
+rest(1)
+
+activateTransparency()
+
+rest(1)
+
+bot.hotkey('winleft', '9')
+
+openClock()
