@@ -151,6 +151,37 @@ def openNeoFetch():
         bot.hotkey('winleft', 'shift', 'up')
 
 
+def openGreeting():
+
+    bot.hotkey('winleft', 'enter')
+    rest(1)
+    bot.hotkey('winleft', 'shift', 'space')
+
+    bot.write('figlet Happy Coding')
+    bot.press('enter')
+
+    rest(1)
+
+    # resize
+    bot.hotkey('winleft', 'r')
+
+    for x in range(18):
+        bot.press('left')
+
+    for x in range(21):
+        bot.press('up')
+
+    bot.press('esc')
+
+    # reposition
+
+    for x in range(45):
+        bot.hotkey('winleft', 'shift', 'right')
+
+    for x in range(49):
+        bot.hotkey('winleft', 'shift', 'down')
+
+
 # work flow
 
 activeWallpaperScript()
@@ -172,5 +203,9 @@ openHtop()
 rest(1)
 
 openNeoFetch()
+
+rest(1)
+
+openGreeting()
 
 bot.hotkey('winleft', 'shift', 'r')
