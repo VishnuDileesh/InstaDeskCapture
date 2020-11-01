@@ -1,5 +1,6 @@
 import pyautogui as bot
 import time
+import datetime
 
 
 def rest(n):
@@ -108,7 +109,7 @@ def openHtop():
     # resize
     bot.hotkey('winleft', 'r')
 
-    for x in range(22):
+    for x in range(20):
         bot.press('left')
 
     bot.press('esc')
@@ -209,3 +210,15 @@ rest(1)
 openGreeting()
 
 bot.hotkey('winleft', 'shift', 'r')
+
+# save to file (screenshot)
+
+# timestamp = datetime.datetime.now().time()
+
+# print(timestamp)
+
+# scr_filename = str(timestamp) + '.png'
+
+# print(scr_filename)
+
+# bot.screenshot(scr_filename)
